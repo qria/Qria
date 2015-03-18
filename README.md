@@ -1,4 +1,4 @@
-1. 개발 시작
+#1. 개발 시작
 
 pycharm에서 new Flask project
 
@@ -12,8 +12,16 @@ git remote add origin https://github.com/qria/pyBoard.git
 
 git push -u origin master
 
-2. index.html 추가
+#2. index.html 추가
 
 '/'와 '/index'에 라우팅
 
 app.run에 debug=True 파라미터 추가. 이제 코드바뀌면 서버 자동 재시작
+
+#3. templates 생성
+
+base, 그리고 거기 들어갈 header, navbar, footer, script 생성
+
+참고로 base.html 제외하고는 모두 빈 파일
+
+index는 base의 content block을 상속해서 재작성
