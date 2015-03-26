@@ -1,0 +1,1 @@
+web: gunicorn qria:app --log-file=-
