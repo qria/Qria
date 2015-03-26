@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+    <head>
+        {% block head %} {% include 'header.html' %} {% endblock %}
+    </head>
+    <body>
+    <div id="navbar">
+        {% block navbar %}{% include 'navbar.html' %}{% endblock %}
+    </div>
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+    <footer class="footer">
+        {% block footer %}{% include 'footer.html' %}{% endblock %}
+    </footer>
+    {% block script %}{% include 'script.html' %}{% endblock %}
+    </body>
+</html>
+
+
