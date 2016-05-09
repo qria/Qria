@@ -1,7 +1,7 @@
 # coding: utf-8
 import os
 import nltk
-# nltk.download('punkt')
+nltk.data.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'nltk_data/'))
 
 from nltk.corpus import wordnet
 from nltk.tokenize import word_tokenize
