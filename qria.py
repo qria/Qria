@@ -33,7 +33,6 @@ def text_analyzer():
     text = request.form.get('text', None, type=str)
     if text:
         definitions = analyze_hard_vocabulary(text)
-        result = str(definitions)
     return render_template('text_analyzer.html', **locals())
 
 

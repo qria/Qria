@@ -56,12 +56,19 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading">Text Analyzer</h1>
-                        <p class="intro-text">Study with your favorite books/scripts/fictions.<br>Created by Minjune Kim</p>
+                        <p class="intro-text">Study with your favorite books/articles/scripts.<br>Created by Minjune Kim</p>
 
-                        {% if result %}
-                            <textarea class="form-control" name="text" id="" cols="30" rows="10">
-                                {{- result -}}
-                            </textarea>
+                        {% if definitions %}
+                            <div class="table-responsive">
+                              <table class="table">
+                                  {% for vocabulary, definition in definitions.items() %}
+                                <tr>
+                                    <th> {{ vocabulary }} </th>
+                                    <td> {{ definition }}</td>
+                                </tr>
+                                  {% endfor %}
+                              </table>
+                            </div>
                         {% endif %}
                         <form action="" method="post">
                             <textarea class="form-control" name="text" id="" cols="30" rows="10">
