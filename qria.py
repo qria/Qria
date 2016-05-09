@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, g
 import json
 
+from vocabulary import analyze_hard_vocabulary
+
 app = Flask(__name__)
 
 
@@ -23,6 +25,16 @@ def echo_webhook():
     data = json.loads(request.data.decode())
     print('Webhook received:', data)
     return str(data)
+
+
+@app.route('/text_analyzer', methods=['GET', 'POST'])
+def text_analyzer(text=None):
+    text = 'Hello horrifying world!'
+    if text:
+        definitions = analyze_hard_vocabulary(text)
+        return str(definitions)
+    return 'hi'
+
 
 if __name__ == '__main__':
     app.run(debug=True)

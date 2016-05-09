@@ -1,12 +1,12 @@
 # coding: utf-8
+import os
 import nltk
 nltk.download('punkt')
 
 from nltk.corpus import wordnet
 from nltk.tokenize import word_tokenize
 
-
-with open(r'.\2000_frequent_words.txt') as f:
+with open(os.path.join(os.path.dirname(os.path.realpath(__file__)), '2000_frequent_words.txt')) as f:
     # Easy words that should be excluded when analyzing
     # Convert them to lowercase just in case
     easy_words = [word.lower() for word in f.read().split()]
