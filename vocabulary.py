@@ -1,7 +1,7 @@
 # coding: utf-8
 import os
 import nltk
-nltk.download('punkt')
+# nltk.download('punkt')
 
 from nltk.corpus import wordnet
 from nltk.tokenize import word_tokenize

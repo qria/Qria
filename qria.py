@@ -28,12 +28,13 @@ def echo_webhook():
 
 
 @app.route('/text_analyzer', methods=['GET', 'POST'])
-def text_analyzer(text=None):
-    text = 'Hello horrifying world!'
+def text_analyzer():
+    # text = 'Hello horrifying world!'
+    text = request.form.get('text', None, type=str)
     if text:
         definitions = analyze_hard_vocabulary(text)
-        return str(definitions)
-    return 'hi'
+        result = str(definitions)
+    return render_template('text_analyzer.html', **locals())
 
 
 if __name__ == '__main__':
